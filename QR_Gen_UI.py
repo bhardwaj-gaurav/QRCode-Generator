@@ -5,7 +5,6 @@ import numpy as numpy
 from PIL import ImageTk, Image
 import qrcode
 from pathlib import Path
-import time
 
 root= Tk()
 root.geometry('950x390')
@@ -32,7 +31,6 @@ def cQr():
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
     img.save("xy.png")
-    time.sleep(1)
     image = Image.open('xy.png')
     image=image.resize((300,300), Image.ANTIALIAS)
     images = ImageTk.PhotoImage(image)
